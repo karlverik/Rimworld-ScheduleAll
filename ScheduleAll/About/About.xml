@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>ScheduleAll!</name>
+  
+  <author>Verik</author>
+  
+  <modVersion>1.0.0</modVersion>
+  
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <packageId>Verik.scheduleall.rimworld</packageId>
+
+  <description>
+ 增加了12个可自定义的日程计划，能够自由修改日程名称和工作，支持模组工作。
+  </description>
+
+  <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld</downloadUrl>
+            <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Safair.ReadingSchedule</li>
+    <li>Mlie.RealDining</li> 
+	<li>FrozenSnowFox.ComplexJobs</li>
+  </loadAfter>
+</ModMetaData>
