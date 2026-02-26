@@ -100,10 +100,14 @@ namespace ScheduleAllMod
             base.ExposeData();
             Scribe_Collections.Look(ref slotConfigs, "slotConfigs", LookMode.Deep);
 
-            // 确保在读取后如果列表为空则初始化
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && slotConfigs == null)
+            Scribe_Collections.Look(ref globalSnapshots, "globalSnapshots", LookMode.Deep);
+
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                InitializeDefaults();
+                if (slotConfigs == null) InitializeDefaults();
+
+                // 【建议添加】确保读档后列表不是 null，防止之后代码报错
+                if (globalSnapshots == null) globalSnapshots = new List<PawnPrioritySnapshot>();
             }
         }
     }
