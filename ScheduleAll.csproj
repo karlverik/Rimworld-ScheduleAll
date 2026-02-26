@@ -65,6 +65,7 @@
     <Compile Include="HarmonyPatch\Harmony_JobGiver_GetJoy.cs" />
     <Compile Include="HarmonyPatch\Harmony_JobGiver_GetJRest.cs" />
     <Compile Include="HarmonyPatch\Harmony_RealDinner_Patch.cs" />
+    <Compile Include="SA_Execute_Priority.cs" />
     <Compile Include="SA_Trigger.cs" />
     <Compile Include="HarmonyPatch\SA_Schedule_Patch.cs" />
     <Compile Include="SA_ModeSettingData.cs" />

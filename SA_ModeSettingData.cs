@@ -36,9 +36,27 @@ namespace ScheduleAllMod
         }
     }
 
+    // --- 新增辅助类：用于保存单个小人的所有工作优先级快照 ---
+    public class PawnPrioritySnapshot : IExposable
+    {
+        public string pawnName; // 记录名字，用于跨存档匹配
+        public List<string> workDefNames = new List<string>();
+        public List<int> priorities = new List<int>();
+
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref pawnName, "pawnName");
+            Scribe_Collections.Look(ref workDefNames, "workDefNames", LookMode.Value);
+            Scribe_Collections.Look(ref priorities, "priorities", LookMode.Value);
+        }
+    }
+
     public class ModSettingsData : ModSettings
     {
         public List<SlotConfig> slotConfigs;
+
+        // --- 新增：全局优先级模板存储 ---
+        public List<PawnPrioritySnapshot> globalSnapshots = new List<PawnPrioritySnapshot>();
 
         private static readonly List<Color> PresetColors = new List<Color>
         {
